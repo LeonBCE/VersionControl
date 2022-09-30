@@ -21,10 +21,11 @@ namespace UserMaintenance
         {
             InitializeComponent();
 
-            lblLastName.Text = Resource1.LastName;
+            lblLastName.Text = Resource1.FullName;
             //lblFirstName.Text = Resource1.FirstName;
             btnAdd.Text = Resource1.Add;
             btnWrite.Text = Resource1.Write;
+            btnDelete.Text = Resource1.Delete;
 
             listUsers.DataSource = users;
             listUsers.ValueMember = "ID";
@@ -61,6 +62,20 @@ namespace UserMaintenance
                 sw.Dispose();
                 sw.Close();
             }
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var delete = (from x in users
+                          where x.ID == (System.Guid)listUsers.SelectedValue
+                         select x).FirstOrDefault();
+
+            users.Remove((User)delete);
+        }
+
+        private void listUsers_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
