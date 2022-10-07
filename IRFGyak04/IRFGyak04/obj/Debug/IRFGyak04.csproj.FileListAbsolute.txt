@@ -1,0 +1,15 @@
+C:\Users\Leon\Source\Repos\VersionControl\UserMaintenance\IRFGyak04\IRFGyak04\bin\Debug\IRFGyak04.exe.config
+C:\Users\Leon\Source\Repos\VersionControl\UserMaintenance\IRFGyak04\IRFGyak04\bin\Debug\IRFGyak04.exe
+C:\Users\Leon\Source\Repos\VersionControl\UserMaintenance\IRFGyak04\IRFGyak04\bin\Debug\IRFGyak04.pdb
+C:\Users\Leon\Source\Repos\VersionControl\UserMaintenance\IRFGyak04\IRFGyak04\bin\Debug\EntityFramework.dll
+C:\Users\Leon\Source\Repos\VersionControl\UserMaintenance\IRFGyak04\IRFGyak04\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Leon\Source\Repos\VersionControl\UserMaintenance\IRFGyak04\IRFGyak04\bin\Debug\EntityFramework.xml
+C:\Users\Leon\Source\Repos\VersionControl\UserMaintenance\IRFGyak04\IRFGyak04\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Leon\Source\Repos\VersionControl\UserMaintenance\IRFGyak04\IRFGyak04\obj\Debug\IRFGyak04.csproj.AssemblyReference.cache
+C:\Users\Leon\Source\Repos\VersionControl\UserMaintenance\IRFGyak04\IRFGyak04\obj\Debug\IRFGyak04.csproj.ResolveComReference.cache
+C:\Users\Leon\Source\Repos\VersionControl\UserMaintenance\IRFGyak04\IRFGyak04\obj\Debug\IRFGyak04.Properties.Resources.resources
+C:\Users\Leon\Source\Repos\VersionControl\UserMaintenance\IRFGyak04\IRFGyak04\obj\Debug\IRFGyak04.csproj.GenerateResource.cache
+C:\Users\Leon\Source\Repos\VersionControl\UserMaintenance\IRFGyak04\IRFGyak04\obj\Debug\IRFGyak04.csproj.CoreCompileInputs.cache
+C:\Users\Leon\Source\Repos\VersionControl\UserMaintenance\IRFGyak04\IRFGyak04\obj\Debug\IRFGyak04.csproj.CopyComplete
+C:\Users\Leon\Source\Repos\VersionControl\UserMaintenance\IRFGyak04\IRFGyak04\obj\Debug\IRFGyak04.exe
+C:\Users\Leon\Source\Repos\VersionControl\UserMaintenance\IRFGyak04\IRFGyak04\obj\Debug\IRFGyak04.pdb
