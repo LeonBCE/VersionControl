@@ -54,9 +54,9 @@ namespace UserMaintenance
             {
                 StreamWriter sw = new StreamWriter(sfd.OpenFile());
 
-                for (int i = 0; i < users.Count; i++)
+                for (int i = 0; i < listUsers.Items.Count; i++)
                 {
-                    sw.WriteLine(users.ToString());
+                    sw.WriteLine(listUsers.Items[i].ToString());
                 }
 
                 sw.Dispose();
