@@ -1,4 +1,5 @@
-﻿using IRFGyak05.MnbServiceReference;
+﻿using IRFGyak05.Entities;
+using IRFGyak05.MnbServiceReference;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,11 +14,15 @@ namespace IRFGyak05
 {
     public partial class Form1 : Form
     {
+        BindingList<RateData> Rates = new BindingList<RateData>();
+
         public Form1()
         {
             InitializeComponent();
 
             Feladat1();
+
+            dataGridView1.DataSource = Rates;
         }
 
         private void Feladat1()
