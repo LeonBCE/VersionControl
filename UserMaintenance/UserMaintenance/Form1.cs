@@ -56,7 +56,7 @@ namespace UserMaintenance
 
                 for (int i = 0; i < listUsers.Items.Count; i++)
                 {
-                    sw.WriteLine(listUsers.Items[i].ToString());
+                    sw.WriteLine(listUsers.Items.ToString());
                 }
 
                 sw.Dispose();

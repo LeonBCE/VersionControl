@@ -32,17 +32,26 @@ namespace IRFGyak05
             var result1 = response1.GetCurrenciesResult;
 
             XmlDocument xml1 = new XmlDocument();
+
             xml1.LoadXml(result1);
+
+            Console.WriteLine(result1);
 
             foreach (XmlElement x in xml1.DocumentElement)
             {
-                string c = x.ChildNodes[0].InnerText;
-                Currencies.Add(c);
+                //string c = x.ChildNodes[1].InnerText;
+                for (int i = 0; i < 75; i++)
+                {
+                    string c = x.ChildNodes[i].InnerText;
+                    Currencies.Add(c);
+                }
+                //Currencies.Add(c);
             }
 
             dataGridView1.DataSource = Rates;
             chartRateData.DataSource = Rates;
             comboBox1.DataSource = Currencies;
+            comboBox1.SelectedIndex = 1;
 
             RefreshData();
         }
