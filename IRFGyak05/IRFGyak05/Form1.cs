@@ -22,11 +22,19 @@ namespace IRFGyak05
         {
             InitializeComponent();
 
-            Feladat1();
-            Feladat5();
-
             dataGridView1.DataSource = Rates;
             chartRateData.DataSource = Rates;
+
+            RefreshData();
+        }
+
+        private void RefreshData()
+        {
+          
+            Rates.Clear();
+
+            Feladat1();
+            Feladat5();
 
             var series = chartRateData.Series[0];
             series.ChartType = SeriesChartType.Line;
@@ -70,9 +78,9 @@ namespace IRFGyak05
 
             var request = new GetExchangeRatesRequestBody()
             {
-                currencyNames = "EUR",
-                startDate = "2020-01-01",
-                endDate = "2020-06-30"
+                currencyNames = (string)comboBox1.SelectedItem,
+                startDate = dateTimePicker1.Value.ToString(),
+                endDate = dateTimePicker2.Value.ToString()
             };
 
             var response = mnbService.GetExchangeRates(request);
@@ -80,6 +88,21 @@ namespace IRFGyak05
             var result = response.GetExchangeRatesResult;
 
             return result;
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshData();
         }
     }
 }
