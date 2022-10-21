@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IRFGyak05.MnbServiceReference;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace IRFGyak05
         public Form1()
         {
             InitializeComponent();
+
+            Feladat1();
+        }
+
+        private void Feladat1()
+        {
+
         }
     }
 }
