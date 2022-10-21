@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace IRFGyak05
 {
@@ -21,11 +22,33 @@ namespace IRFGyak05
             InitializeComponent();
 
             Feladat1();
+            Feladat5();
 
             dataGridView1.DataSource = Rates;
         }
 
-        private void Feladat1()
+        private void Feladat5()
+        {
+            XmlDocument xml = new XmlDocument();
+            xml.LoadXml(Feladat1());
+            foreach (XmlElement x in xml.DocumentElement)
+            {
+                RateData r = new RateData();
+                Rates.Add(r);
+
+                r.Date = DateTime.Parse(x.GetAttribute("date"));
+
+                var childElement = (XmlElement)x.ChildNodes[0];
+                r.Currency = childElement.GetAttribute("curr");
+
+                var unit = decimal.Parse(childElement.GetAttribute("unit"));
+                var value = decimal.Parse(childElement.InnerText);
+                if (unit != 0)
+                    r.Value = value / unit;
+            }
+        }
+
+        private string Feladat1()
         {
             var mnbService = new MNBArfolyamServiceSoapClient();
 
@@ -40,7 +63,7 @@ namespace IRFGyak05
 
             var result = response.GetExchangeRatesResult;
 
-            Console.WriteLine(result);
+            return result;
         }
     }
 }
