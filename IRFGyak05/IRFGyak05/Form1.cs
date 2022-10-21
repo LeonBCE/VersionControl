@@ -17,13 +17,32 @@ namespace IRFGyak05
     public partial class Form1 : Form
     {
         BindingList<RateData> Rates = new BindingList<RateData>();
+        BindingList<string> Currencies = new BindingList<string>();
 
         public Form1()
         {
             InitializeComponent();
 
+            var mnbService1 = new MNBArfolyamServiceSoapClient();
+
+            var request1 = new GetCurrenciesRequestBody();
+
+            var response1 = mnbService1.GetCurrencies(request1);
+
+            var result1 = response1.GetCurrenciesResult;
+
+            XmlDocument xml1 = new XmlDocument();
+            xml1.LoadXml(result1);
+
+            foreach (XmlElement x in xml1.DocumentElement)
+            {
+                string c = x.ChildNodes[0].InnerText;
+                Currencies.Add(c);
+            }
+
             dataGridView1.DataSource = Rates;
             chartRateData.DataSource = Rates;
+            comboBox1.DataSource = Currencies;
 
             RefreshData();
         }
@@ -63,6 +82,8 @@ namespace IRFGyak05
                 r.Date = DateTime.Parse(x.GetAttribute("date"));
 
                 var childElement = (XmlElement)x.ChildNodes[0];
+                if (childElement == null)
+                    continue;
                 r.Currency = childElement.GetAttribute("curr");
 
                 var unit = decimal.Parse(childElement.GetAttribute("unit"));

@@ -29,9 +29,9 @@ namespace IRFGyak05
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.chartRateData = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -51,16 +51,16 @@ namespace IRFGyak05
             // 
             // chartRateData
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chartRateData.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chartRateData.Legends.Add(legend7);
+            chartArea9.Name = "ChartArea1";
+            this.chartRateData.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.chartRateData.Legends.Add(legend9);
             this.chartRateData.Location = new System.Drawing.Point(428, 38);
             this.chartRateData.Name = "chartRateData";
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.chartRateData.Series.Add(series7);
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            this.chartRateData.Series.Add(series9);
             this.chartRateData.Size = new System.Drawing.Size(819, 582);
             this.chartRateData.TabIndex = 1;
             this.chartRateData.Text = "chart1";
@@ -71,6 +71,7 @@ namespace IRFGyak05
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 2;
+            this.dateTimePicker1.Value = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // dateTimePicker2
