@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace IRFGyak06.Entities
 {
-    public class BallFactory : IToyFactory
+    class CarFactory : IToyFactory
     {
         public Toy CreateNew()
         {
