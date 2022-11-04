@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IRFGyak06.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace IRFGyak06
 {
     public partial class Form1 : Form
     {
+        private List<Ball> _balls = new List<Ball>();
         public Form1()
         {
             InitializeComponent();
