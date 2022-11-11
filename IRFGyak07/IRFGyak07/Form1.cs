@@ -27,6 +27,7 @@ namespace IRFGyak07
             dataGridView1.DataSource = Ticks;
 
             CreatePortfolio();
+
         }
 
         private void CreatePortfolio()
