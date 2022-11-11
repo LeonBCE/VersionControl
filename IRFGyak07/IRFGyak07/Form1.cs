@@ -7,12 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IRFGyak07.Entities;
 
 namespace IRFGyak07
 {
     public partial class Form1 : Form
     {
+        List<PortfolioItem> Portfolio = new List<PortfolioItem>();
+
         PortfolioEntities context = new PortfolioEntities();
+
 
         List<Tick> Ticks;
         public Form1()
@@ -21,6 +25,17 @@ namespace IRFGyak07
 
             Ticks = context.Tick.ToList();
             dataGridView1.DataSource = Ticks;
+
+            CreatePortfolio();
+        }
+
+        private void CreatePortfolio()
+        {
+            Portfolio.Add(new PortfolioItem() { Index = "OTP", Volume = 10 });
+            Portfolio.Add(new PortfolioItem() { Index = "ZWACK", Volume = 10 });
+            Portfolio.Add(new PortfolioItem() { Index = "ELMU", Volume = 10 });
+
+            dataGridView2.DataSource = Portfolio;
         }
     }
 }
