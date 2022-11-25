@@ -117,6 +117,8 @@ namespace IRFGyak05
 
             var result = response.GetExchangeRatesResult;
 
+            Console.WriteLine(result);
+
             return result;
         }
 
