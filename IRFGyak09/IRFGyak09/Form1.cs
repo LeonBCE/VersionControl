@@ -17,8 +17,11 @@ namespace IRFGyak09
         List<Person> Population = new List<Person>();
         List<BirthProbability> BirthProbabilities = new List<BirthProbability>();
         List<DeathProbability> DeathProbabilities = new List<DeathProbability>();
+        List<int> years = new List<int>();
+        List<int> numberOfMales = new List<int>();
+        List<int> numberOfFemales = new List<int>();
 
-        Random rng = new Random(1234);
+        Random rng = new Random();
 
         public Form1()
         {
@@ -44,8 +47,13 @@ namespace IRFGyak09
                 int nbrOfFemales = (from x in Population
                                     where x.Gender == Gender.Female && x.IsAlive
                                     select x).Count();
-                Console.WriteLine(
-                    string.Format("Év:{0} Fiúk:{1} Lányok:{2}", year, nbrOfMales, nbrOfFemales));
+
+                years.Add(year);
+                numberOfMales.Add(nbrOfMales);
+                numberOfFemales.Add(nbrOfFemales);
+
+                //Console.WriteLine(
+                    //string.Format("Év:{0} Fiúk:{1} Lányok:{2}", year, nbrOfMales, nbrOfFemales));
             }
         }
 
@@ -151,7 +159,23 @@ namespace IRFGyak09
 
         private void DisplayResult()
         {
-            
+            for (int i = 0; i < years.Count ; i++)
+            {
+                if (i == 0)
+                {
+                    richTextBox1.Text += "Szimulációs év:" + years[i];
+                    richTextBox1.Text += "\n \t Fiúk: " + numberOfMales[i];
+                    richTextBox1.Text += "\n \t Lányok: " + numberOfFemales[i];
+                    richTextBox1.Text += "\n ";
+                }
+                else
+                {
+                    richTextBox1.Text += "\n Szimulációs év:" + years[i];
+                    richTextBox1.Text += "\n \t Fiúk: " + numberOfMales[i];
+                    richTextBox1.Text += "\n \t Lányok: " + numberOfFemales[i];
+                    richTextBox1.Text += "\n ";
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
