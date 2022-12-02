@@ -8,8 +8,8 @@ namespace IRFGyak09.Entities
 {
     public class BirthProbability
     {
-        public int BirthYear { get; set; }
+        public int Age { get; set; }
         public int NbrOfChildren { get; set; }
-        public double birthProbability { get; set; }
+        public double P { get; set; }
     }
 }

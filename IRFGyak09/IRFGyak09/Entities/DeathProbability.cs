@@ -9,8 +9,8 @@ namespace IRFGyak09.Entities
     public class DeathProbability
     {
         public Gender Gender { get; set; }
-        public int BirthYear { get; set; }
+        public int Age { get; set; }
 
-        public double deathProbability { get; set; }
+        public double P { get; set; }
     }
 }
