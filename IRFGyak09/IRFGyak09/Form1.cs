@@ -24,7 +24,7 @@ namespace IRFGyak09
         {
             InitializeComponent();
 
-            Population = GetPopulation(@"C:\Temp\nép-teszt.csv");
+            Population = GetPopulation(@textBox1.Text);
             BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
             DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
         }
@@ -143,7 +143,27 @@ namespace IRFGyak09
 
         private void button1_Click(object sender, EventArgs e)
         {
+            richTextBox1.Clear();
+            //Population.Clear();
             Simulation();
+            DisplayResult();
+        }
+
+        private void DisplayResult()
+        {
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+
+            ofd.InitialDirectory = "C:\\Temp";
+
+            if (ofd.ShowDialog() == DialogResult.OK) 
+            {
+                textBox1.Text = ofd.FileName;
+            }
         }
     }
 }
