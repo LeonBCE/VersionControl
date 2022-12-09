@@ -17,7 +17,7 @@ namespace IRFGyak10
         GameArea ga;
 
         int populationSize = 100;
-        int nbrOfSteps = 100;
+        int nbrOfSteps = 10;
         int nbrOfStepsIncrement = 10;
         int generation = 1;
 
@@ -30,8 +30,8 @@ namespace IRFGyak10
             ga = gc.ActivateDisplay();
             this.Controls.Add(ga);
 
-            gc.AddPlayer();
-            gc.Start(true);
+            //gc.AddPlayer();
+            //gc.Start(true);
 
             gc.GameOver += Gc_GameOver;
 
@@ -39,6 +39,7 @@ namespace IRFGyak10
             {
                 gc.AddPlayer(nbrOfSteps);
             }
+
             gc.Start();
 
 
@@ -65,10 +66,13 @@ namespace IRFGyak10
             {
                 winnerBrain = winners.FirstOrDefault().Brain.Clone();
                 gc.GameOver -= Gc_GameOver;
+
+                button1.Visible = true;
                 return;
             }
 
             gc.ResetCurrentLevel();
+
             foreach (var p in topPerformers)
             {
                 var b = p.Brain.Clone();
@@ -82,6 +86,7 @@ namespace IRFGyak10
                 else
                     gc.AddPlayer(b.Mutate());
             }
+
             gc.Start();
         }
 
