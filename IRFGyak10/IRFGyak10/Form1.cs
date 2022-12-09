@@ -17,9 +17,11 @@ namespace IRFGyak10
         GameArea ga;
 
         int populationSize = 100;
-        int nbrOfSteps = 10;
+        int nbrOfSteps = 100;
         int nbrOfStepsIncrement = 10;
         int generation = 1;
+
+        Brain winnerBrain = null;
 
         public Form1()
         {
@@ -44,15 +46,27 @@ namespace IRFGyak10
 
         private void Gc_GameOver(object sender)
         {
+            generation++;
+            label1.Text = string.Format(
+                "{0}. generáció",
+                generation);
+
             var playerList = from p in gc.GetCurrentPlayers()
                              orderby p.GetFitness() descending
                              select p;
             var topPerformers = playerList.Take(populationSize / 2).ToList();
 
-            generation++;
-            label1.Text = string.Format(
-                "{0}. generáció",
-                generation);
+
+            var winners = from p in topPerformers
+                          where p.IsWinner
+                          select p;
+
+            if (winners.Count() > 0)
+            {
+                winnerBrain = winners.FirstOrDefault().Brain.Clone();
+                gc.GameOver -= Gc_GameOver;
+                return;
+            }
 
             gc.ResetCurrentLevel();
             foreach (var p in topPerformers)
@@ -69,6 +83,15 @@ namespace IRFGyak10
                     gc.AddPlayer(b.Mutate());
             }
             gc.Start();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            gc.ResetCurrentLevel();
+            gc.AddPlayer(winnerBrain.Clone());
+            gc.AddPlayer();
+            ga.Focus();
+            gc.Start(true);
         }
     }
 }
